@@ -8,14 +8,14 @@ async function getArticles() {
 
 // Répartition des données de l'API dans le DOM
 async function addProduct() {
-  let result = await getArticles().then(function (resultAPI) {
-    const articles = resultAPI;
+  await getArticles().then(async function (resultAPI) {
+    const articles = await resultAPI;
     console.log(articles);
     for (let article in articles) {
       // Création de l'élément "a"
       let productLink = document.createElement("a");
       document.querySelector(".items").appendChild(productLink);
-      productLink.href = "product.html";
+      productLink.href = "product.html?id=" + resultAPI[article]._id;
 
       // Création de l'élément "article"
       let productArticle = document.createElement("article");
