@@ -52,7 +52,6 @@ function get(article) {
   addToCart(article);
 }
 
-
 //Ajout au panier
 function addToCart(article) {
   const btn_envoyerPanier = document.querySelector("#addToCart");
